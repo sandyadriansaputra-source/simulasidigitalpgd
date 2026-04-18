@@ -7,14 +7,14 @@
     <title>Pegadaian Pro Sidodadi</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --p-green: #006a4e;
             --p-green-dark: #004d39;
             --p-gold: #c5a059;
             --p-gold-light: #dfc48b;
-            --p-gold-glow: rgba(197, 160, 89, 0.25);
+            --p-gold-glow: rgba(197, 160, 89, 0.2);
         }
 
         * {
@@ -22,418 +22,232 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        html, body {
-            background: linear-gradient(160deg, #f0f4f0 0%, #e8ece8 50%, #f5f0e8 100%);
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-            touch-action: pan-x pan-y; 
+        body {
+            background: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1e293b;
         }
 
-        /* === HEADER === */
         .header-premium {
-            background: linear-gradient(135deg, #006a4e 0%, #003d2e 50%, #004d39 100%);
+            background: linear-gradient(135deg, #006a4e 0%, #004d39 100%);
             position: relative;
             overflow: hidden;
+            border-bottom: 4px solid var(--p-gold);
         }
 
-        .header-premium::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .logo-pegadaian {
-            height: 36px;
-            filter: brightness(0) invert(1);
-        }
-
-        .header-divider {
-            width: 1.5px;
-            height: 32px;
-            background: linear-gradient(to bottom, transparent, var(--p-gold-light), transparent);
-        }
-
-        .header-text h1 {
-            font-size: 16px;
-            font-weight: 900;
-            font-style: italic;
-            letter-spacing: 1px;
-            background: linear-gradient(135deg, #fff 0%, var(--p-gold-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.1;
-        }
-
-        .header-text p {
-            font-size: 7px;
-            opacity: 0.7;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-            color: var(--p-gold-light);
-        }
-
-        .header-gold-line {
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--p-gold), var(--p-gold-light), var(--p-gold), transparent);
-            margin-top: 14px;
-            border-radius: 2px;
-        }
-
-        /* === CARDS === */
-        .card-pro {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        .card-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
             border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(0, 106, 78, 0.06);
-            border: 1px solid rgba(197, 160, 89, 0.15);
-            margin-bottom: 8px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-pro::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--p-green), var(--p-gold), var(--p-green));
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .card-section-title {
             font-size: 10px;
-            font-weight: 900;
+            font-weight: 800;
             color: var(--p-green);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             display: flex;
             align-items: center;
             gap: 6px;
         }
 
-        /* === INPUTS === */
-        .input-indo {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1.5px solid #e2e8f0;
-            border-radius: 10px 0 0 10px;
-            font-size: 16px; 
-            font-weight: 600;
-            color: #1e293b;
-            outline: none;
-            background: #fafbfc;
+        .input-group-modern {
+            display: flex;
+            align-items: center;
+            background: #f1f5f9;
+            border-radius: 10px;
+            border: 1.5px solid transparent;
             transition: all 0.2s ease;
         }
 
-        .input-indo:focus {
+        .input-group-modern:focus-within {
             border-color: var(--p-gold);
-            background: #fffdf7;
+            background: #fff;
             box-shadow: 0 0 0 3px var(--p-gold-glow);
         }
 
-        .btn-save-sm {
-            background: linear-gradient(135deg, var(--p-green) 0%, var(--p-green-dark) 100%);
-            color: white;
-            width: 44px;
-            border-radius: 0 10px 10px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .input-field {
+            width: 100%;
+            padding: 8px 12px;
+            background: transparent;
             border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
+            outline: none;
+            font-weight: 600;
+            color: #334155;
+            font-size: 13px;
         }
 
-        .btn-save-sm:active {
-            transform: scale(0.92);
-        }
-
-        label {
-            font-size: 9px;
-            font-weight: 800;
-            color: #64748b;
-            text-transform: uppercase;
-            margin-bottom: 2px;
-            display: block;
-        }
-
-        /* === ICON RESET BUTTON === */
-        .btn-reset-red {
+        .btn-inline-save {
+            padding: 6px 12px;
+            color: var(--p-green);
+            transition: all 0.2s;
             font-size: 12px;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #fef2f2, #fee2e2);
-            color: #dc2626;
-            border: 1px solid #fecaca;
-            cursor: pointer;
-            transition: all 0.15s ease;
         }
 
-        .btn-reset-red:active {
+        .btn-inline-save:active {
             transform: scale(0.9);
-            background: #fecaca;
         }
 
-        /* === MODAL === */
-        #modalResult {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 20, 15, 0.85);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            z-index: 999;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+        .btn-primary-gradient {
+            background: linear-gradient(135deg, var(--p-green) 0%, var(--p-green-dark) 100%);
+            box-shadow: 0 8px 16px -4px rgba(0, 106, 78, 0.3);
         }
 
-        .modal-content {
-            background: white;
-            width: 100%;
-            max-width: 400px;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-            animation: modalSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        .btn-primary-gradient:active {
+            transform: translateY(1px);
         }
-
-        @keyframes modalSlideIn {
-            from { opacity: 0; transform: translateY(30px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        /* === LOADER === */
-        #loader {
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(160deg, #f0f4f0 0%, #e8ece8 50%, #f5f0e8 100%);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .loader-spinner {
-            width: 48px;
-            height: 48px;
-            border: 4px solid #e2e8f0;
-            border-top: 4px solid var(--p-green);
-            border-right: 4px solid var(--p-gold);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        .loader-text {
-            font-size: 10px;
-            font-weight: 800;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            animation: pulse 1.5s ease-in-out infinite;
-            margin-top: 16px;
-        }
-
-        @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
-
-        .btn-submit-main {
-            width: 100%;
-            background: linear-gradient(135deg, var(--p-green) 0%, var(--p-green-dark) 60%, #003328 100%);
-            color: white;
-            padding: 16px;
-            border-radius: 14px;
-            font-weight: 900;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: none;
-            box-shadow: 0 6px 20px rgba(0, 106, 78, 0.3);
-            transition: all 0.25s ease;
-        }
-
-        .btn-submit-main:active { transform: scale(0.97); }
     </style>
 </head>
 
-<body class="pb-32">
+<body class="pb-10">
 
-    <div id="loader">
-        <div class="loader-spinner"></div>
-        <p class="loader-text">Sinkronisasi Data...</p>
+    <div id="loader" class="fixed inset-0 bg-white z-[1000] flex flex-col items-center justify-center">
+        <div class="w-10 h-10 border-4 border-slate-200 border-t-emerald-600 border-r-amber-400 rounded-full animate-spin"></div>
+        <p class="mt-4 text-[9px] font-bold text-slate-400 tracking-widest uppercase">Memuat Data...</p>
     </div>
 
-    <div class="header-premium p-5 text-white rounded-b-[28px] shadow-xl">
-        <div class="logo-container">
-            <img src="https://monev.pegadaian.co.id/userdata/profile_site/5662a273c270a215cdc46900d8a882f280e84b32c3f02.png"
-                alt="Logo Pegadaian" class="logo-pegadaian">
-            <div class="header-divider"></div>
-            <div class="header-text">
-                <h1>PEGADAIAN PRO</h1>
-                <p>UPC SIDODADI — SIMULASI DIGITAL</p>
+    <div class="header-premium p-4 pb-6 text-white rounded-b-[24px] shadow-lg">
+        <div class="flex items-center justify-center gap-3">
+            <img src="https://monev.pegadaian.co.id/userdata/profile_site/5662a273c270a215cdc46900d8a882f280e84b32c3f02.png" alt="Logo" class="h-8 brightness-0 invert">
+            <div class="h-6 w-[1.5px] bg-amber-400/50"></div>
+            <div>
+                <h1 class="text-sm font-black italic leading-none text-white">PEGADAIAN PRO</h1>
+                <p class="text-[7px] font-bold tracking-widest text-amber-200 uppercase mt-0.5">Sidodadi Simulation</p>
             </div>
         </div>
-        <div class="header-gold-line"></div>
     </div>
 
-    <div class="px-4 mt-4 space-y-2">
-
-        <div class="card-pro p-4">
+    <div class="px-4 -mt-3 space-y-3">
+        
+        <div class="card-glass p-4">
             <div class="card-section-title mb-2">
-                <i class="fa-solid fa-cube"></i>
-                <span>Produk Simulasi</span>
+                <i class="fa-solid fa-layer-group text-amber-500"></i>
+                <span>Produk</span>
             </div>
-            <select id="pilihanProduk"
-                class="w-full p-3 border-2 border-emerald-100 rounded-xl font-black text-green-800 text-sm outline-none bg-emerald-50/50 focus:border-amber-300 focus:bg-white transition-all">
+            <select id="pilihanProduk" class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl font-bold text-slate-700 text-xs outline-none focus:border-emerald-500 transition-all">
                 <option value="KCA">GADAI KCA</option>
                 <option value="FLEXI">GADAI FLEXI</option>
                 <option value="KRASIDA">GADAI KRASIDA</option>
             </select>
         </div>
 
-        <div class="card-pro p-4">
-            <div class="flex justify-between items-center mb-3 pb-2 border-b border-slate-100">
+        <div class="card-glass p-4">
+            <div class="flex justify-between items-center mb-3">
                 <div class="card-section-title">
-                    <i class="fa-solid fa-tags"></i>
-                    <span>Harga Master</span>
+                    <i class="fa-solid fa-chart-line text-emerald-600"></i>
+                    <span>Parameter</span>
                 </div>
-                <button onclick="handleReset('resetAdmin', this)" class="btn-reset-red" title="Reset Admin">
-                    <i class="fa-solid fa-rotate-left"></i>
+                <button onclick="handleReset('resetAdmin', this)" class="text-[9px] font-bold text-red-500 bg-red-50 px-2 py-1 rounded-md">
+                    RESET
                 </button>
             </div>
-            <div class="grid grid-cols-2 gap-x-3 gap-y-3">
-                <div>
-                    <label>STL</label>
-                    <div class="flex h-10"><input type="text" id="stl" class="input-indo"><button
-                            onclick="saveCell('stl', 'stl')" class="btn-save-sm"><i
-                                class="fa-solid fa-save"></i></button></div>
+            <div class="grid grid-cols-2 gap-2">
+                <div class="space-y-1">
+                    <label class="text-[9px] font-bold text-slate-400 ml-1">STL</label>
+                    <div class="input-group-modern">
+                        <input type="text" id="stl" class="input-field" placeholder="0">
+                        <button onclick="saveCell('stl', 'stl')" class="btn-inline-save"><i class="fa-solid fa-save"></i></button>
+                    </div>
                 </div>
-                <div>
-                    <label>HD RETAIL</label>
-                    <div class="flex h-10"><input type="text" id="hd_retail" class="input-indo"><button
-                            onclick="saveCell('hd_retail', 'hd_retail')" class="btn-save-sm"><i
-                                class="fa-solid fa-save"></i></button></div>
+                <div class="space-y-1">
+                    <label class="text-[9px] font-bold text-slate-400 ml-1">HD RETAIL</label>
+                    <div class="input-group-modern">
+                        <input type="text" id="hd_retail" class="input-field" placeholder="0">
+                        <button onclick="saveCell('hd_retail', 'hd_retail')" class="btn-inline-save"><i class="fa-solid fa-save"></i></button>
+                    </div>
                 </div>
-                <div class="col-span-2">
-                    <label>UP PERMINTAAN</label>
-                    <div class="flex h-10"><input type="text" id="up"
-                            class="input-indo font-bold text-green-700"><button
-                            onclick="saveCell('up', 'up_permintaan')" class="btn-save-sm"><i
-                                class="fa-solid fa-save"></i></button></div>
+                <div class="col-span-2 space-y-1">
+                    <label class="text-[9px] font-bold text-slate-400 ml-1 uppercase">Permintaan UP</label>
+                    <div class="input-group-modern !bg-emerald-50">
+                        <input type="text" id="up" class="input-field font-bold text-emerald-800" placeholder="0">
+                        <button onclick="saveCell('up', 'up_permintaan')" class="btn-inline-save !text-emerald-700"><i class="fa-solid fa-check"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="card-pro p-4">
-            <div class="flex justify-between items-center mb-3 pb-2 border-b border-slate-100">
+        <div class="card-glass p-4">
+            <div class="flex justify-between items-center mb-3">
                 <div class="card-section-title">
-                    <i class="fa-solid fa-gem"></i>
+                    <i class="fa-solid fa-gem text-amber-500"></i>
                     <span>Jaminan</span>
                 </div>
-                <button onclick="handleReset('resetJaminan', this)" class="btn-reset-red" title="Reset Jaminan">
-                    <i class="fa-solid fa-rotate-left"></i>
+                <button onclick="handleReset('resetJaminan', this)" class="text-[9px] font-bold text-red-500 bg-red-50 px-2 py-1 rounded-md">
+                    HAPUS
                 </button>
             </div>
-            <div class="space-y-3">
-                <div class="grid grid-cols-2 gap-2">
-                    <div>
-                        <label><i class="fa-solid fa-ring text-amber-400 mr-1"></i>ITEM 01</label>
-                        <div class="flex h-9"><input type="text" id="b1" class="input-indo text-xs"
-                                placeholder="Berat"><button onclick="saveCell('b1', 'berat1')"
-                                class="btn-save-sm w-9"><i class="fa-solid fa-save text-xs"></i></button></div>
+            
+            <div class="space-y-2">
+                <div class="grid grid-cols-2 gap-2 bg-slate-50/50 p-2 rounded-lg border border-slate-100">
+                    <div class="input-group-modern !bg-white">
+                        <input type="text" id="b1" class="input-field !py-1.5" placeholder="Brt 1">
+                        <button onclick="saveCell('b1', 'berat1')" class="btn-inline-save !py-1"><i class="fa-solid fa-save"></i></button>
                     </div>
-                    <div>
-                        <label>KARAT</label>
-                        <div class="flex h-9"><input type="text" id="k1" class="input-indo text-xs"
-                                placeholder="Krt"><button onclick="saveCell('k1', 'karat1')" class="btn-save-sm w-9"><i
-                                    class="fa-solid fa-save text-xs"></i></button></div>
+                    <div class="input-group-modern !bg-white">
+                        <input type="text" id="k1" class="input-field !py-1.5" placeholder="Krt 1">
+                        <button onclick="saveCell('k1', 'karat1')" class="btn-inline-save !py-1"><i class="fa-solid fa-save"></i></button>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-2">
-                    <div>
-                        <label><i class="fa-solid fa-ring text-amber-400 mr-1"></i>ITEM 02</label>
-                        <div class="flex h-9"><input type="text" id="b2" class="input-indo text-xs"
-                                placeholder="Berat"><button onclick="saveCell('b2', 'berat2')"
-                                class="btn-save-sm w-9"><i class="fa-solid fa-save text-xs"></i></button></div>
+                
+                <div class="grid grid-cols-2 gap-2 bg-slate-50/50 p-2 rounded-lg border border-slate-100">
+                    <div class="input-group-modern !bg-white">
+                        <input type="text" id="b2" class="input-field !py-1.5" placeholder="Brt 2">
+                        <button onclick="saveCell('b2', 'berat2')" class="btn-inline-save !py-1"><i class="fa-solid fa-save"></i></button>
                     </div>
-                    <div>
-                        <label>KARAT</label>
-                        <div class="flex h-9"><input type="text" id="k2" class="input-indo text-xs"
-                                placeholder="Krt"><button onclick="saveCell('k2', 'karat2')" class="btn-save-sm w-9"><i
-                                    class="fa-solid fa-save text-xs"></i></button></div>
+                    <div class="input-group-modern !bg-white">
+                        <input type="text" id="k2" class="input-field !py-1.5" placeholder="Krt 2">
+                        <button onclick="saveCell('k2', 'karat2')" class="btn-inline-save !py-1"><i class="fa-solid fa-save"></i></button>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-2">
-                    <div>
-                        <label><i class="fa-solid fa-ring text-amber-400 mr-1"></i>ITEM 03</label>
-                        <div class="flex h-9"><input type="text" id="b3" class="input-indo text-xs"
-                                placeholder="Berat"><button onclick="saveCell('b3', 'berat3')"
-                                class="btn-save-sm w-9"><i class="fa-solid fa-save text-xs"></i></button></div>
+
+                <div class="grid grid-cols-2 gap-2 bg-slate-50/50 p-2 rounded-lg border border-slate-100">
+                    <div class="input-group-modern !bg-white">
+                        <input type="text" id="b3" class="input-field !py-1.5" placeholder="Brt 3">
+                        <button onclick="saveCell('b3', 'berat3')" class="btn-inline-save !py-1"><i class="fa-solid fa-save"></i></button>
                     </div>
-                    <div>
-                        <label>KARAT</label>
-                        <div class="flex h-9"><input type="text" id="k3" class="input-indo text-xs"
-                                placeholder="Krt"><button onclick="saveCell('k3', 'karat3')" class="btn-save-sm w-9"><i
-                                    class="fa-solid fa-save text-xs"></i></button></div>
+                    <div class="input-group-modern !bg-white">
+                        <input type="text" id="k3" class="input-field !py-1.5" placeholder="Krt 3">
+                        <button onclick="saveCell('k3', 'karat3')" class="btn-inline-save !py-1"><i class="fa-solid fa-save"></i></button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <button onclick="prosesSimulasi()" id="btnSubmit" class="btn-submit-main">
-            <i class="fa-solid fa-calculator mr-2"></i>HITUNG SEKARANG
+        <button onclick="prosesSimulasi()" id="btnSubmit" class="btn-primary-gradient w-full py-4 rounded-xl text-white font-black text-xs tracking-widest uppercase flex items-center justify-center gap-2">
+            <i class="fa-solid fa-calculator"></i>
+            HITUNG ESTIMASI
         </button>
+
     </div>
 
-    <div id="modalResult">
-        <div class="modal-content">
-            <div class="modal-header p-5 text-white text-center">
-                <h3 class="font-black text-base tracking-wide">HASIL ESTIMASI</h3>
-                <p id="labelHasil" class="text-amber-300 text-[9px] font-bold uppercase mt-1 tracking-wider"></p>
+    <div id="modalResult" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[999] items-center justify-center p-6">
+        <div class="bg-white w-full max-w-xs rounded-2xl overflow-hidden shadow-2xl">
+            <div class="bg-emerald-900 p-4 text-center">
+                <h3 class="text-white font-black text-[10px] tracking-widest">HASIL ESTIMASI</h3>
+                <p id="labelHasil" class="text-amber-400 text-[9px] font-bold mt-1 uppercase"></p>
             </div>
             <div class="p-5">
-                <div class="text-center mb-4 py-3 bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl">
-                    <p class="text-[9px] text-slate-400 font-bold uppercase">Uang Pinjaman</p>
-                    <h2 id="valPinjaman" class="text-3xl font-black text-green-800 mt-1">Rp 0</h2>
+                <div class="bg-amber-50 p-3 text-center rounded-xl mb-3 border border-amber-100">
+                    <p class="text-[8px] text-amber-700 font-bold uppercase tracking-wider">Harga Retail</p>
+                    <h2 id="valRetail" class="text-lg font-black text-amber-900 mt-1">Rp 0</h2>
                 </div>
-                <div id="tableKrasida" class="hidden border border-slate-200 rounded-xl overflow-hidden">
+                
+                <div class="bg-slate-50 p-4 text-center rounded-xl mb-4 border border-slate-100">
+                    <p class="text-[9px] text-slate-400 font-bold uppercase">Uang Pinjaman</p>
+                    <h2 id="valPinjaman" class="text-2xl font-black text-emerald-800 mt-1">Rp 0</h2>
+                </div>
+                <div id="tableKrasida" class="hidden border rounded-lg overflow-hidden">
                     <table class="w-full text-[10px]">
-                        <thead class="bg-slate-100 text-green-800">
-                            <tr><th class="p-2 border-b">Tenor</th><th class="p-2 border-b">Angsuran</th></tr>
+                        <thead class="bg-slate-100 text-emerald-900">
+                            <tr><th class="p-2">Tenor</th><th class="p-2">Angsuran</th></tr>
                         </thead>
                         <tbody id="tbodyKrasida" class="text-center font-bold"></tbody>
                     </table>
                 </div>
-                <button onclick="closePopup()" class="w-full mt-5 py-3.5 bg-slate-800 text-white rounded-xl font-bold uppercase text-[10px]">
-                    TUTUP
-                </button>
+                <button onclick="closePopup()" class="w-full mt-4 py-3 bg-slate-800 text-white rounded-lg font-bold text-[10px]">TUTUP</button>
             </div>
         </div>
     </div>
@@ -442,6 +256,12 @@
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyTRbvRFQWATCJlG7SmaIyI6-p35KP_lf8Ty8EW6fsekb5qvhvkSfuokf1VTK4Ihn7r/exec";
 
         window.onload = async () => {
+            if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock('portrait').catch(function(error) {
+                    console.log("Orientation lock diabaikan.");
+                });
+            }
+
             const loader = document.getElementById('loader');
             try {
                 const response = await fetch(WEB_APP_URL);
@@ -449,13 +269,10 @@
                 if (data.stl) document.getElementById('stl').value = formatVal(data.stl);
                 if (data.hd_retail) document.getElementById('hd_retail').value = formatVal(data.hd_retail);
                 if (data.up) document.getElementById('up').value = formatVal(data.up);
-                if (data.b1) document.getElementById('b1').value = formatVal(data.b1);
-                if (data.k1) document.getElementById('k1').value = formatVal(data.k1);
-                if (data.b2) document.getElementById('b2').value = formatVal(data.b2);
-                if (data.k2) document.getElementById('k2').value = formatVal(data.k2);
-                if (data.b3) document.getElementById('b3').value = formatVal(data.b3);
-                if (data.k3) document.getElementById('k3').value = formatVal(data.k3);
-            } catch (e) { console.log("Load gagal."); }
+                ['b1','k1','b2','k2','b3','k3'].forEach(id => {
+                    if(data[id]) document.getElementById(id).value = formatVal(data[id]);
+                });
+            } catch (e) { console.log("Gagal load."); }
             finally { loader.style.display = 'none'; }
         };
 
@@ -481,30 +298,28 @@
         });
 
         async function saveCell(id, key) {
-            const el = document.getElementById(id);
-            el.style.backgroundColor = "#fef9c3";
-            const payload = {}; payload[key] = parseID(el.value);
+            const el = document.getElementById(id).parentElement;
+            el.style.borderColor = "#fbbf24";
+            const payload = {}; payload[key] = parseID(document.getElementById(id).value);
             try {
                 await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify(payload) });
-                el.style.backgroundColor = "#dcfce7";
-                setTimeout(() => el.style.backgroundColor = "white", 800);
-            } catch (e) { alert("Simpan Gagal!"); el.style.backgroundColor = "white"; }
+                el.style.borderColor = "#10b981";
+                setTimeout(() => el.style.borderColor = "transparent", 1000);
+            } catch (e) { alert("Gagal!"); }
         }
 
         async function handleReset(action, btn) {
-            const originalHTML = btn.innerHTML; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>'; btn.disabled = true;
+            btn.innerHTML = '...'; 
             try {
                 await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify({ action: action }) });
-                if (action === 'resetAdmin') ['stl', 'hd_retail', 'up'].forEach(i => document.getElementById(i).value = "");
-                else ['b1', 'k1', 'b2', 'k2', 'b3', 'k3'].forEach(i => document.getElementById(i).value = "");
-            } catch (e) { alert("Reset Gagal!"); }
-            finally { btn.innerHTML = originalHTML; btn.disabled = false; }
+                location.reload();
+            } catch (e) { alert("Gagal!"); }
         }
 
         async function prosesSimulasi() {
             const btn = document.getElementById('btnSubmit');
             const prod = document.getElementById('pilihanProduk').value;
-            btn.innerHTML = "MENGHITUNG..."; btn.disabled = true;
+            btn.innerHTML = 'MENGHITUNG...';
             const payload = {
                 stl: parseID(document.getElementById('stl').value),
                 hd_retail: parseID(document.getElementById('hd_retail').value),
@@ -520,20 +335,25 @@
                 const tbBody = document.getElementById('tbodyKrasida');
                 const tbSec = document.getElementById('tableKrasida');
                 tbSec.classList.add('hidden');
+                
+                // Menampilkan Kolom F2 (Harga Retail)
+                document.getElementById('valRetail').innerText = data.f2 || "Rp 0";
+                
                 if (prod === 'KCA') document.getElementById('valPinjaman').innerText = data.kca;
                 if (prod === 'FLEXI') document.getElementById('valPinjaman').innerText = data.flexi;
                 if (prod === 'KRASIDA') {
                     document.getElementById('valPinjaman').innerText = data.krasida;
                     tbBody.innerHTML = "";
                     data.tabelKrasida.slice(1).forEach(row => {
-                        tbBody.innerHTML += `<tr><td class="p-2 border">${row[0]}</td><td class="p-2 border text-red-600 font-bold">${row[1]}</td></tr>`;
+                        tbBody.innerHTML += `<tr class="border-b"><td class="p-2">${row[0]}</td><td class="p-2 text-red-600">${row[1]}</td></tr>`;
                     });
                     tbSec.classList.remove('hidden');
                 }
                 document.getElementById('modalResult').style.display = 'flex';
             } catch (e) { alert("Gagal!"); }
-            finally { btn.innerHTML = "HITUNG SEKARANG"; btn.disabled = false; }
+            finally { btn.innerHTML = '<i class="fa-solid fa-calculator"></i> HITUNG ESTIMASI'; }
         }
+
         function closePopup() { document.getElementById('modalResult').style.display = 'none'; }
     </script>
 </body>
