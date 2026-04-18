@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <title>Pegadaian Pro Sidodadi</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -19,13 +19,16 @@
 
         * {
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        body {
+        html, body {
             background: linear-gradient(160deg, #f0f4f0 0%, #e8ece8 50%, #f5f0e8 100%);
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
+            touch-action: pan-x pan-y; 
+            overscroll-behavior: none;
         }
 
         /* === HEADER === */
@@ -46,17 +49,6 @@
             border-radius: 50%;
         }
 
-        .header-premium::after {
-            content: '';
-            position: absolute;
-            bottom: -60%;
-            left: -20%;
-            width: 250px;
-            height: 250px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
         .logo-container {
             display: flex;
             align-items: center;
@@ -69,7 +61,6 @@
         .logo-pegadaian {
             height: 36px;
             filter: brightness(0) invert(1);
-            drop-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .header-divider {
@@ -112,15 +103,11 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-radius: 16px;
-            box-shadow:
-                0 4px 24px rgba(0, 106, 78, 0.06),
-                0 1px 3px rgba(0, 0, 0, 0.04),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 24px rgba(0, 106, 78, 0.06);
             border: 1px solid rgba(197, 160, 89, 0.15);
             margin-bottom: 8px;
             position: relative;
             overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .card-pro::before {
@@ -131,10 +118,6 @@
             right: 0;
             height: 3px;
             background: linear-gradient(90deg, var(--p-green), var(--p-gold), var(--p-green));
-        }
-
-        .card-pro:active {
-            transform: scale(0.995);
         }
 
         .card-section-title {
@@ -148,18 +131,13 @@
             gap: 6px;
         }
 
-        .card-section-title i {
-            font-size: 12px;
-            color: var(--p-gold);
-        }
-
         /* === INPUTS === */
         .input-indo {
             width: 100%;
             padding: 10px 12px;
             border: 1.5px solid #e2e8f0;
             border-radius: 10px 0 0 10px;
-            font-size: 14px;
+            font-size: 16px; 
             font-weight: 600;
             color: #1e293b;
             outline: none;
@@ -184,11 +162,6 @@
             border: none;
             cursor: pointer;
             transition: all 0.2s ease;
-            box-shadow: 2px 0 8px rgba(0, 106, 78, 0.2);
-        }
-
-        .btn-save-sm:hover {
-            background: linear-gradient(135deg, #007d5c 0%, var(--p-green) 100%);
         }
 
         .btn-save-sm:active {
@@ -202,86 +175,27 @@
             text-transform: uppercase;
             margin-bottom: 2px;
             display: block;
-            letter-spacing: 0.5px;
         }
 
-        /* === SELECT === */
-        select {
-            appearance: none;
-            -webkit-appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23006a4e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 12px center;
-            padding-right: 36px;
-        }
-
-        /* === BUTTONS === */
+        /* === ICON RESET BUTTON === */
         .btn-reset-red {
-            font-size: 8px;
-            font-weight: 900;
-            padding: 4px 10px;
+            font-size: 12px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 8px;
             background: linear-gradient(135deg, #fef2f2, #fee2e2);
             color: #dc2626;
             border: 1px solid #fecaca;
             cursor: pointer;
             transition: all 0.15s ease;
-            letter-spacing: 0.3px;
-        }
-
-        .btn-reset-red:hover {
-            background: linear-gradient(135deg, #fee2e2, #fecaca);
-            transform: translateY(-1px);
         }
 
         .btn-reset-red:active {
-            transform: scale(0.95);
-        }
-
-        .btn-submit-main {
-            width: 100%;
-            background: linear-gradient(135deg, var(--p-green) 0%, var(--p-green-dark) 60%, #003328 100%);
-            color: white;
-            padding: 16px;
-            border-radius: 14px;
-            font-weight: 900;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow:
-                0 6px 20px rgba(0, 106, 78, 0.3),
-                0 2px 6px rgba(0, 0, 0, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.15);
-            transition: all 0.25s ease;
-        }
-
-        .btn-submit-main::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn-submit-main:hover::before {
-            left: 100%;
-        }
-
-        .btn-submit-main:active {
-            transform: scale(0.97);
-            box-shadow: 0 2px 8px rgba(0, 106, 78, 0.3);
-        }
-
-        .btn-submit-main:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
+            transform: scale(0.9);
+            background: #fecaca;
         }
 
         /* === MODAL === */
@@ -304,38 +218,13 @@
             max-width: 400px;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow:
-                0 25px 60px rgba(0, 0, 0, 0.4),
-                0 0 0 1px rgba(197, 160, 89, 0.2);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
             animation: modalSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         @keyframes modalSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(0.95);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .modal-header {
-            background: linear-gradient(135deg, #006a4e 0%, #003d2e 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .modal-header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--p-gold), var(--p-gold-light), var(--p-gold), transparent);
+            from { opacity: 0; transform: translateY(30px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         /* === LOADER === */
@@ -358,26 +247,9 @@
             border-right: 4px solid var(--p-gold);
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin-bottom: 16px;
         }
 
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 0.6;
-            }
-
-            50% {
-                opacity: 1;
-            }
-        }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
         .loader-text {
             font-size: 10px;
@@ -386,87 +258,37 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             animation: pulse 1.5s ease-in-out infinite;
+            margin-top: 16px;
         }
 
-        /* === TABLE === */
-        .table-premium {
-            border-collapse: separate;
-            border-spacing: 0;
-        }
+        @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
 
-        .table-premium thead th {
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-            font-weight: 800;
-            color: var(--p-green);
+        .btn-submit-main {
+            width: 100%;
+            background: linear-gradient(135deg, var(--p-green) 0%, var(--p-green-dark) 60%, #003328 100%);
+            color: white;
+            padding: 16px;
+            border-radius: 14px;
+            font-weight: 900;
+            font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 6px 20px rgba(0, 106, 78, 0.3);
+            transition: all 0.25s ease;
         }
 
-        .table-premium tbody tr:hover {
-            background: #fafbfc;
-        }
-
-        /* === FOOTER === */
-        .footer-brand {
-            text-align: center;
-            padding: 16px 0 8px;
-            opacity: 0.4;
-            transition: opacity 0.3s;
-        }
-
-        .footer-brand:hover {
-            opacity: 0.7;
-        }
-
-        /* === ANIMATIONS === */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-card {
-            animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            opacity: 0;
-        }
-
-        .animate-card:nth-child(1) {
-            animation-delay: 0.05s;
-        }
-
-        .animate-card:nth-child(2) {
-            animation-delay: 0.1s;
-        }
-
-        .animate-card:nth-child(3) {
-            animation-delay: 0.15s;
-        }
-
-        .animate-card:nth-child(4) {
-            animation-delay: 0.2s;
-        }
-
-        .animate-card:nth-child(5) {
-            animation-delay: 0.25s;
-        }
+        .btn-submit-main:active { transform: scale(0.97); }
     </style>
 </head>
 
 <body class="pb-10">
 
-    <!-- LOADER -->
     <div id="loader">
         <div class="loader-spinner"></div>
         <p class="loader-text">Sinkronisasi Data...</p>
     </div>
 
-    <!-- HEADER -->
     <div class="header-premium p-5 text-white rounded-b-[28px] shadow-xl">
         <div class="logo-container">
             <img src="https://monev.pegadaian.co.id/userdata/profile_site/5662a273c270a215cdc46900d8a882f280e84b32c3f02.png"
@@ -480,11 +302,9 @@
         <div class="header-gold-line"></div>
     </div>
 
-    <!-- MAIN CONTENT -->
     <div class="px-4 mt-4 space-y-2">
 
-        <!-- Produk Simulasi -->
-        <div class="card-pro p-4 animate-card">
+        <div class="card-pro p-4">
             <div class="card-section-title mb-2">
                 <i class="fa-solid fa-cube"></i>
                 <span>Produk Simulasi</span>
@@ -497,15 +317,14 @@
             </select>
         </div>
 
-        <!-- Harga Master -->
-        <div class="card-pro p-4 animate-card">
+        <div class="card-pro p-4">
             <div class="flex justify-between items-center mb-3 pb-2 border-b border-slate-100">
                 <div class="card-section-title">
                     <i class="fa-solid fa-tags"></i>
                     <span>Harga Master</span>
                 </div>
-                <button onclick="handleReset('resetAdmin', this)" class="btn-reset-red">
-                    <i class="fa-solid fa-rotate-left mr-1"></i>RESET
+                <button onclick="handleReset('resetAdmin', this)" class="btn-reset-red" title="Reset Admin">
+                    <i class="fa-solid fa-rotate-left"></i>
                 </button>
             </div>
             <div class="grid grid-cols-2 gap-x-3 gap-y-3">
@@ -531,15 +350,14 @@
             </div>
         </div>
 
-        <!-- Jaminan -->
-        <div class="card-pro p-4 animate-card">
+        <div class="card-pro p-4">
             <div class="flex justify-between items-center mb-3 pb-2 border-b border-slate-100">
                 <div class="card-section-title">
                     <i class="fa-solid fa-gem"></i>
                     <span>Jaminan</span>
                 </div>
-                <button onclick="handleReset('resetJaminan', this)" class="btn-reset-red">
-                    <i class="fa-solid fa-rotate-left mr-1"></i>RESET
+                <button onclick="handleReset('resetJaminan', this)" class="btn-reset-red" title="Reset Jaminan">
+                    <i class="fa-solid fa-rotate-left"></i>
                 </button>
             </div>
             <div class="space-y-3">
@@ -588,64 +406,44 @@
             </div>
         </div>
 
-        <!-- Submit Button -->
-        <button onclick="prosesSimulasi()" id="btnSubmit" class="btn-submit-main animate-card">
+        <button onclick="prosesSimulasi()" id="btnSubmit" class="btn-submit-main">
             <i class="fa-solid fa-calculator mr-2"></i>HITUNG SEKARANG
         </button>
     </div>
 
-    <!-- Footer -->
-    <div class="footer-brand">
-        <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest">
-            <i class="fa-solid fa-shield-halved mr-1"></i>Pegadaian Pro &copy; 2025
-        </p>
-    </div>
-
-    <!-- MODAL RESULT -->
     <div id="modalResult">
         <div class="modal-content">
             <div class="modal-header p-5 text-white text-center">
-                <div class="flex justify-center mb-2">
-                    <div class="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center backdrop-blur-sm">
-                        <i class="fa-solid fa-chart-line text-lg text-amber-300"></i>
-                    </div>
-                </div>
                 <h3 class="font-black text-base tracking-wide">HASIL ESTIMASI</h3>
                 <p id="labelHasil" class="text-amber-300 text-[9px] font-bold uppercase mt-1 tracking-wider"></p>
             </div>
             <div class="p-5">
                 <div class="text-center mb-4 py-3 bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl">
-                    <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Uang Pinjaman</p>
+                    <p class="text-[9px] text-slate-400 font-bold uppercase">Uang Pinjaman</p>
                     <h2 id="valPinjaman" class="text-3xl font-black text-green-800 mt-1">Rp 0</h2>
                 </div>
                 <div id="tableKrasida" class="hidden border border-slate-200 rounded-xl overflow-hidden">
-                    <table class="table-premium w-full text-[10px]">
-                        <thead>
-                            <tr>
-                                <th class="p-2 border-b">Tenor</th>
-                                <th class="p-2 border-b">Angsuran</th>
-                            </tr>
+                    <table class="w-full text-[10px]">
+                        <thead class="bg-slate-100 text-green-800">
+                            <tr><th class="p-2 border-b">Tenor</th><th class="p-2 border-b">Angsuran</th></tr>
                         </thead>
                         <tbody id="tbodyKrasida" class="text-center font-bold"></tbody>
                     </table>
                 </div>
-                <button onclick="closePopup()"
-                    class="w-full mt-5 py-3.5 bg-gradient-to-r from-slate-800 to-slate-900 text-white rounded-xl font-bold uppercase text-[10px] tracking-wider shadow-lg hover:from-slate-700 hover:to-slate-800 active:scale-97 transition-all">
-                    <i class="fa-solid fa-xmark mr-1"></i>Tutup
+                <button onclick="closePopup()" class="w-full mt-5 py-3.5 bg-slate-800 text-white rounded-xl font-bold uppercase text-[10px]">
+                    TUTUP
                 </button>
             </div>
         </div>
     </div>
 
     <script>
-        // GANTI URL INI DENGAN HASIL DEPLOY TERBARU BAPAK
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyTRbvRFQWATCJlG7SmaIyI6-p35KP_lf8Ty8EW6fsekb5qvhvkSfuokf1VTK4Ihn7r/exec";
 
         window.onload = async () => {
             const loader = document.getElementById('loader');
             try {
                 const response = await fetch(WEB_APP_URL);
-                if (!response.ok) throw new Error("Gagal ambil data");
                 const data = await response.json();
                 if (data.stl) document.getElementById('stl').value = formatVal(data.stl);
                 if (data.hd_retail) document.getElementById('hd_retail').value = formatVal(data.hd_retail);
@@ -656,11 +454,8 @@
                 if (data.k2) document.getElementById('k2').value = formatVal(data.k2);
                 if (data.b3) document.getElementById('b3').value = formatVal(data.b3);
                 if (data.k3) document.getElementById('k3').value = formatVal(data.k3);
-            } catch (e) {
-                console.log("Auto-load gagal, web tetap terbuka.");
-            } finally {
-                loader.style.display = 'none'; // Loading pasti hilang apa pun yang terjadi
-            }
+            } catch (e) { console.log("Load gagal."); }
+            finally { loader.style.display = 'none'; }
         };
 
         function formatVal(v) {
@@ -676,6 +471,7 @@
             p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
             i.value = p.join(',');
         }
+
         function parseID(s) { return parseFloat(s.replace(/\./g, '').replace(',', '.')) || 0; }
 
         ['stl', 'hd_retail', 'up', 'b1', 'k1', 'b2', 'k2', 'b3', 'k3'].forEach(id => {
@@ -692,25 +488,23 @@
                 await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify(payload) });
                 el.style.backgroundColor = "#dcfce7";
                 setTimeout(() => el.style.backgroundColor = originalColor, 800);
-            } catch (e) { el.style.backgroundColor = originalColor; alert("Simpan Gagal!"); }
+            } catch (e) { alert("Simpan Gagal!"); el.style.backgroundColor = originalColor; }
         }
 
         async function handleReset(action, btn) {
-            const originalText = btn.innerText; btn.innerText = "..."; btn.disabled = true;
+            const originalHTML = btn.innerHTML; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>'; btn.disabled = true;
             try {
                 await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify({ action: action }) });
                 if (action === 'resetAdmin') ['stl', 'hd_retail', 'up'].forEach(i => document.getElementById(i).value = "");
-                else['b1', 'k1', 'b2', 'k2', 'b3', 'k3'].forEach(i => document.getElementById(i).value = "");
-                alert("Berhasil Dikosongkan!");
+                else ['b1', 'k1', 'b2', 'k2', 'b3', 'k3'].forEach(i => document.getElementById(i).value = "");
             } catch (e) { alert("Reset Gagal!"); }
-            finally { btn.innerText = originalText; btn.disabled = false; }
+            finally { btn.innerHTML = originalHTML; btn.disabled = false; }
         }
 
         async function prosesSimulasi() {
             const btn = document.getElementById('btnSubmit');
             const prod = document.getElementById('pilihanProduk').value;
             btn.innerHTML = "MENGHITUNG..."; btn.disabled = true;
-
             const payload = {
                 stl: parseID(document.getElementById('stl').value),
                 hd_retail: parseID(document.getElementById('hd_retail').value),
@@ -719,7 +513,6 @@
                 berat2: parseID(document.getElementById('b2').value), karat2: parseID(document.getElementById('k2').value),
                 berat3: parseID(document.getElementById('b3').value), karat3: parseID(document.getElementById('k3').value)
             };
-
             try {
                 const res = await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify(payload) });
                 const data = await res.json();
@@ -727,19 +520,18 @@
                 const tbBody = document.getElementById('tbodyKrasida');
                 const tbSec = document.getElementById('tableKrasida');
                 tbSec.classList.add('hidden');
-
                 if (prod === 'KCA') document.getElementById('valPinjaman').innerText = data.kca;
                 if (prod === 'FLEXI') document.getElementById('valPinjaman').innerText = data.flexi;
                 if (prod === 'KRASIDA') {
                     document.getElementById('valPinjaman').innerText = data.krasida;
                     tbBody.innerHTML = "";
                     data.tabelKrasida.slice(1).forEach(row => {
-                        tbBody.innerHTML += `<tr><td class="p-1 border">${row[0]}</td><td class="p-1 border text-red-600 font-bold">${row[1]}</td></tr>`;
+                        tbBody.innerHTML += `<tr><td class="p-2 border">${row[0]}</td><td class="p-2 border text-red-600 font-bold">${row[1]}</td></tr>`;
                     });
                     tbSec.classList.remove('hidden');
                 }
                 document.getElementById('modalResult').style.display = 'flex';
-            } catch (e) { alert("Gagal mengambil hasil!"); }
+            } catch (e) { alert("Gagal!"); }
             finally { btn.innerHTML = "HITUNG SEKARANG"; btn.disabled = false; }
         }
         function closePopup() { document.getElementById('modalResult').style.display = 'none'; }
