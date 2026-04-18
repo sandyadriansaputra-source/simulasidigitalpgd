@@ -26,9 +26,10 @@
             background: linear-gradient(160deg, #f0f4f0 0%, #e8ece8 50%, #f5f0e8 100%);
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            min-height: 100vh;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
             touch-action: pan-x pan-y; 
-            overscroll-behavior: none;
         }
 
         /* === HEADER === */
@@ -282,7 +283,7 @@
     </style>
 </head>
 
-<body class="pb-10">
+<body class="pb-32">
 
     <div id="loader">
         <div class="loader-spinner"></div>
@@ -329,19 +330,19 @@
             </div>
             <div class="grid grid-cols-2 gap-x-3 gap-y-3">
                 <div>
-                    <label>STL (B2)</label>
+                    <label>STL</label>
                     <div class="flex h-10"><input type="text" id="stl" class="input-indo"><button
                             onclick="saveCell('stl', 'stl')" class="btn-save-sm"><i
                                 class="fa-solid fa-save"></i></button></div>
                 </div>
                 <div>
-                    <label>HD RETAIL (B3)</label>
+                    <label>HD RETAIL</label>
                     <div class="flex h-10"><input type="text" id="hd_retail" class="input-indo"><button
                             onclick="saveCell('hd_retail', 'hd_retail')" class="btn-save-sm"><i
                                 class="fa-solid fa-save"></i></button></div>
                 </div>
                 <div class="col-span-2">
-                    <label>UP PERMINTAAN (B4)</label>
+                    <label>UP PERMINTAAN</label>
                     <div class="flex h-10"><input type="text" id="up"
                             class="input-indo font-bold text-green-700"><button
                             onclick="saveCell('up', 'up_permintaan')" class="btn-save-sm"><i
@@ -369,7 +370,7 @@
                                 class="btn-save-sm w-9"><i class="fa-solid fa-save text-xs"></i></button></div>
                     </div>
                     <div>
-                        <label>(B6)</label>
+                        <label>KARAT</label>
                         <div class="flex h-9"><input type="text" id="k1" class="input-indo text-xs"
                                 placeholder="Krt"><button onclick="saveCell('k1', 'karat1')" class="btn-save-sm w-9"><i
                                     class="fa-solid fa-save text-xs"></i></button></div>
@@ -383,7 +384,7 @@
                                 class="btn-save-sm w-9"><i class="fa-solid fa-save text-xs"></i></button></div>
                     </div>
                     <div>
-                        <label>(B8)</label>
+                        <label>KARAT</label>
                         <div class="flex h-9"><input type="text" id="k2" class="input-indo text-xs"
                                 placeholder="Krt"><button onclick="saveCell('k2', 'karat2')" class="btn-save-sm w-9"><i
                                     class="fa-solid fa-save text-xs"></i></button></div>
@@ -397,7 +398,7 @@
                                 class="btn-save-sm w-9"><i class="fa-solid fa-save text-xs"></i></button></div>
                     </div>
                     <div>
-                        <label>(B10)</label>
+                        <label>KARAT</label>
                         <div class="flex h-9"><input type="text" id="k3" class="input-indo text-xs"
                                 placeholder="Krt"><button onclick="saveCell('k3', 'karat3')" class="btn-save-sm w-9"><i
                                     class="fa-solid fa-save text-xs"></i></button></div>
@@ -481,14 +482,13 @@
 
         async function saveCell(id, key) {
             const el = document.getElementById(id);
-            const originalColor = el.style.backgroundColor;
             el.style.backgroundColor = "#fef9c3";
             const payload = {}; payload[key] = parseID(el.value);
             try {
                 await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify(payload) });
                 el.style.backgroundColor = "#dcfce7";
-                setTimeout(() => el.style.backgroundColor = originalColor, 800);
-            } catch (e) { alert("Simpan Gagal!"); el.style.backgroundColor = originalColor; }
+                setTimeout(() => el.style.backgroundColor = "white", 800);
+            } catch (e) { alert("Simpan Gagal!"); el.style.backgroundColor = "white"; }
         }
 
         async function handleReset(action, btn) {
