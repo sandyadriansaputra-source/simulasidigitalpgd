@@ -56,24 +56,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             position: relative;
             z-index: 2;
         }
 
         .logo-pegadaian {
-            height: 36px;
+            height: 30px;
             filter: brightness(0) invert(1);
         }
 
         .header-divider {
             width: 1.5px;
-            height: 32px;
+            height: 26px;
             background: linear-gradient(to bottom, transparent, var(--p-gold-light), transparent);
         }
 
         .header-text h1 {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 900;
             font-style: italic;
             letter-spacing: 1px;
@@ -88,7 +88,7 @@
             font-size: 7px;
             opacity: 0.7;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             font-weight: 700;
             color: var(--p-gold-light);
         }
@@ -96,7 +96,7 @@
         .header-gold-line {
             height: 3px;
             background: linear-gradient(90deg, transparent, var(--p-gold), var(--p-gold-light), var(--p-gold), transparent);
-            margin-top: 14px;
+            margin-top: 8px;
             border-radius: 2px;
         }
 
@@ -105,10 +105,10 @@
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(0, 106, 78, 0.05);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 106, 78, 0.05);
             border: 1px solid rgba(197, 160, 89, 0.1);
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             position: relative;
             overflow: hidden;
         }
@@ -137,10 +137,10 @@
         /* === INPUTS === */
         .input-indo {
             width: 100%;
-            padding: 10px 14px;
+            padding: 6px 10px;
             border: 1.5px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 15px;
+            border-radius: 8px;
+            font-size: 13px;
             font-weight: 600;
             color: #1e293b;
             outline: none;
@@ -151,21 +151,21 @@
         .input-indo:focus {
             border-color: var(--p-gold);
             background: #ffffff;
-            box-shadow: 0 0 0 4px var(--p-gold-glow);
+            box-shadow: 0 0 0 3px var(--p-gold-glow);
         }
 
         .item-card-premium {
             background: #ffffff;
             border: 1px solid rgba(0, 106, 78, 0.04);
-            border-radius: 14px;
-            padding: 10px 12px;
+            border-radius: 10px;
+            padding: 6px 10px;
             position: relative;
             transition: all 0.3s ease;
         }
 
         .item-card-premium:focus-within {
             border-color: var(--p-gold);
-            box-shadow: 0 6px 16px rgba(0, 106, 78, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 106, 78, 0.05);
         }
 
         .item-badge {
@@ -173,31 +173,14 @@
             color: white;
             font-size: 7px;
             font-weight: 900;
-            padding: 2px 7px;
-            border-radius: 5px;
+            padding: 2px 6px;
+            border-radius: 4px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            margin-bottom: 8px;
-        }
-
-        .btn-save-sm {
-            background: linear-gradient(135deg, var(--p-green) 0%, var(--p-green-dark) 100%);
-            color: white;
-            width: 44px;
-            border-radius: 0 10px 10px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .btn-save-sm:active {
-            transform: scale(0.92);
+            margin-bottom: 4px;
         }
 
         label {
@@ -211,13 +194,13 @@
 
         /* === ICON RESET BUTTON === */
         .btn-reset-red {
-            font-size: 12px;
-            width: 28px;
-            height: 28px;
+            font-size: 11px;
+            width: 24px;
+            height: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
+            border-radius: 6px;
             background: linear-gradient(135deg, #fef2f2, #fee2e2);
             color: #dc2626;
             border: 1px solid #fecaca;
@@ -241,14 +224,14 @@
             z-index: 999;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 16px;
         }
 
         .modal-content {
             background: white;
             width: 100%;
             max-width: 380px;
-            border-radius: 28px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
             animation: modalSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -256,7 +239,7 @@
 
         .modal-header-premium {
             background: linear-gradient(135deg, var(--p-green) 0%, #004d39 100%);
-            padding: 24px 20px;
+            padding: 16px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -278,7 +261,7 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 5px 14px;
+            padding: 4px 12px;
             border-radius: 99px;
             color: var(--p-gold-light);
             font-size: 10px;
@@ -286,7 +269,7 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             display: inline-block;
-            margin-top: 8px;
+            margin-top: 6px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
@@ -315,8 +298,8 @@
         }
 
         .loader-spinner {
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             border: 4px solid #e2e8f0;
             border-top: 4px solid var(--p-green);
             border-right: 4px solid var(--p-gold);
@@ -337,7 +320,7 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             animation: pulse 1.5s ease-in-out infinite;
-            margin-top: 16px;
+            margin-top: 12px;
         }
 
         @keyframes pulse {
@@ -356,14 +339,14 @@
             width: 100%;
             background: linear-gradient(135deg, var(--p-green) 0%, var(--p-green-dark) 60%, #003328 100%);
             color: white;
-            padding: 16px;
-            border-radius: 14px;
+            padding: 12px;
+            border-radius: 12px;
             font-weight: 900;
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 1px;
             border: none;
-            box-shadow: 0 6px 20px rgba(0, 106, 78, 0.3);
+            box-shadow: 0 4px 16px rgba(0, 106, 78, 0.3);
             transition: all 0.25s ease;
         }
 
@@ -373,14 +356,14 @@
     </style>
 </head>
 
-<body class="pb-32">
+<body class="pb-16">
 
     <div id="loader">
         <div class="loader-spinner"></div>
         <p class="loader-text">Sinkronisasi Data...</p>
     </div>
 
-    <div class="header-premium p-4 text-white rounded-b-[24px] shadow-xl">
+    <div class="header-premium p-3 text-white rounded-b-[20px] shadow-lg">
         <div class="logo-container">
             <img src="https://monev.pegadaian.co.id/userdata/profile_site/5662a273c270a215cdc46900d8a882f280e84b32c3f02.png"
                 alt="Logo Pegadaian" class="logo-pegadaian">
@@ -390,26 +373,26 @@
                 <p>UPC SIDODADI — SIMULASI DIGITAL</p>
             </div>
         </div>
-        <div class="header-gold-line mt-3"></div>
+        <div class="header-gold-line"></div>
     </div>
 
-    <div class="px-4 mt-3 space-y-1.5">
+    <div class="px-3 mt-2 space-y-1">
 
-        <div class="card-pro p-3">
-            <div class="card-section-title mb-1.5">
+        <div class="card-pro p-2">
+            <div class="card-section-title mb-1">
                 <i class="fa-solid fa-cube"></i>
                 <span>Produk Simulasi</span>
             </div>
             <select id="pilihanProduk"
-                class="w-full p-2.5 border-2 border-emerald-100 rounded-xl font-black text-green-800 text-sm outline-none bg-emerald-50/50 focus:border-amber-300 focus:bg-white transition-all">
+                class="w-full p-1.5 border-2 border-emerald-100 rounded-lg font-black text-green-800 text-sm outline-none bg-emerald-50/50 focus:border-amber-300 focus:bg-white transition-all">
                 <option value="KCA">GADAI KCA</option>
                 <option value="FLEXI">GADAI FLEXI</option>
                 <option value="KRASIDA">GADAI KRASIDA</option>
             </select>
         </div>
 
-        <div class="card-pro p-3">
-            <div class="flex justify-between items-center mb-2 pb-1.5 border-b border-slate-100">
+        <div class="card-pro p-2">
+            <div class="flex justify-between items-center mb-1 pb-1 border-b border-slate-100">
                 <div class="card-section-title">
                     <i class="fa-solid fa-tags"></i>
                     <span>Harga Master</span>
@@ -418,7 +401,7 @@
                     <i class="fa-solid fa-rotate-left"></i>
                 </button>
             </div>
-            <div class="grid grid-cols-2 gap-x-3 gap-y-3">
+            <div class="grid grid-cols-2 gap-2">
                 <div>
                     <label>STL</label>
                     <input type="text" id="stl" class="input-indo" onblur="saveCell('stl', 'stl')">
@@ -435,8 +418,8 @@
             </div>
         </div>
 
-        <div class="card-pro p-3">
-            <div class="flex justify-between items-center mb-2 pb-1.5 border-b border-slate-100">
+        <div class="card-pro p-2">
+            <div class="flex justify-between items-center mb-1 pb-1 border-b border-slate-100">
                 <div class="card-section-title">
                     <i class="fa-solid fa-gem"></i>
                     <span>Jaminan</span>
@@ -445,11 +428,10 @@
                     <i class="fa-solid fa-rotate-left"></i>
                 </button>
             </div>
-            <div class="space-y-3">
-                <!-- ITEM 01 -->
+            <div class="space-y-1.5">
                 <div class="item-card-premium">
                     <div class="item-badge"><i class="fa-solid fa-ring"></i> ITEM 01</div>
-                    <div class="grid grid-cols-2 gap-3">
+                    <div class="grid grid-cols-2 gap-2">
                         <div>
                             <label>BERAT (GR)</label>
                             <input type="text" id="b1" class="input-indo" placeholder="0,00"
@@ -463,10 +445,9 @@
                     </div>
                 </div>
 
-                <!-- ITEM 02 -->
                 <div class="item-card-premium">
                     <div class="item-badge"><i class="fa-solid fa-ring"></i> ITEM 02</div>
-                    <div class="grid grid-cols-2 gap-3">
+                    <div class="grid grid-cols-2 gap-2">
                         <div>
                             <label>BERAT (GR)</label>
                             <input type="text" id="b2" class="input-indo" placeholder="0,00"
@@ -480,10 +461,9 @@
                     </div>
                 </div>
 
-                <!-- ITEM 03 -->
                 <div class="item-card-premium">
                     <div class="item-badge"><i class="fa-solid fa-ring"></i> ITEM 03</div>
-                    <div class="grid grid-cols-2 gap-3">
+                    <div class="grid grid-cols-2 gap-2">
                         <div>
                             <label>BERAT (GR)</label>
                             <input type="text" id="b3" class="input-indo" placeholder="0,00"
@@ -508,37 +488,37 @@
         <div class="modal-content">
             <div class="modal-header-premium">
                 <h3 class="text-white/70 font-bold text-[10px] uppercase tracking-[2px]">Estimasi Pinjaman</h3>
-                <div id="labelHasil" class="product-badge-premium mt-2"></div>
+                <div id="labelHasil" class="product-badge-premium"></div>
             </div>
-            <div class="p-5">
-                <div class="grid grid-cols-2 gap-3 mb-4">
-                    <div class="py-2 px-3 bg-slate-50 rounded-xl text-center border border-slate-100">
+            <div class="p-4">
+                <div class="grid grid-cols-2 gap-2 mb-3">
+                    <div class="py-2 px-2 bg-slate-50 rounded-lg text-center border border-slate-100">
                         <p class="text-[9px] text-slate-400 font-bold uppercase">Harga Retail</p>
                         <p id="valRetail" class="text-xs font-black text-slate-700 mt-1">Rp 0</p>
                     </div>
                     <div id="wrapperUM"
-                        class="py-2 px-3 bg-amber-50 rounded-xl text-center border border-amber-100 hidden">
+                        class="py-2 px-2 bg-amber-50 rounded-lg text-center border border-amber-100 hidden">
                         <p id="labelUM" class="text-[9px] text-amber-600 font-bold uppercase">Uang Muka</p>
                         <p id="valUM" class="text-xs font-black text-amber-700 mt-1">Rp 0</p>
                     </div>
                 </div>
-                <div class="text-center mb-4 py-3 bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl">
+                <div class="text-center mb-3 py-2 bg-gradient-to-r from-emerald-50 to-green-50 rounded-lg">
                     <p class="text-[9px] text-slate-400 font-bold uppercase">Uang Pinjaman</p>
-                    <h2 id="valPinjaman" class="text-3xl font-black text-green-800 mt-1">Rp 0</h2>
+                    <h2 id="valPinjaman" class="text-2xl font-black text-green-800 mt-1">Rp 0</h2>
                 </div>
-                <div id="tableKrasida" class="hidden border border-slate-200 rounded-xl overflow-hidden">
+                <div id="tableKrasida" class="hidden border border-slate-200 rounded-lg overflow-hidden">
                     <table class="w-full text-[10px]">
                         <thead class="bg-slate-100 text-green-800">
                             <tr>
-                                <th class="p-2 border-b">Tenor</th>
-                                <th class="p-2 border-b">Angsuran</th>
+                                <th class="p-1.5 border-b">Tenor</th>
+                                <th class="p-1.5 border-b">Angsuran</th>
                             </tr>
                         </thead>
                         <tbody id="tbodyKrasida" class="text-center font-bold"></tbody>
                     </table>
                 </div>
                 <button onclick="closePopup()"
-                    class="w-full mt-5 py-3.5 bg-slate-800 text-white rounded-xl font-bold uppercase text-[10px]">
+                    class="w-full mt-4 py-2.5 bg-slate-800 text-white rounded-lg font-bold uppercase text-[10px]">
                     TUTUP
                 </button>
             </div>
@@ -663,7 +643,7 @@
                     document.getElementById('valPinjaman').innerText = data.krasida;
                     tbBody.innerHTML = "";
                     data.tabelKrasida.slice(1).forEach(row => {
-                        tbBody.innerHTML += `<tr><td class="p-2 border">${row[0]}</td><td class="p-2 border text-red-600 font-bold">${row[1]}</td></tr>`;
+                        tbBody.innerHTML += `<tr><td class="p-1.5 border">${row[0]}</td><td class="p-1.5 border text-red-600 font-bold">${row[1]}</td></tr>`;
                     });
                     tbSec.classList.remove('hidden');
                 }
