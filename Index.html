@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Pegadaian Pro Sidodadi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --p-green: #006a4e;
+            --p-green-dark: #004d39;
+            --p-gold: #c5a059;
+            --p-gold-light: #dfc48b;
+            --p-gold-glow: rgba(197, 160, 89, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html,
+        body {
+            background: linear-gradient(160deg, #f0f4f0 0%, #e8ece8 50%, #f5f0e8 100%);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            touch-action: pan-x pan-y;
+        }
+
+        /* === HEADER === */
+        .header-premium {
+            background: linear-gradient(135deg, #006a4e 0%, #003d2e 50%, #004d39 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-premium::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-pegadaian {
+            height: 36px;
+            filter: brightness(0) invert(1);
+        }
+
+        .header-divider {
+            width: 1.5px;
+            height: 32px;
+            background: linear-gradient(to bottom, transparent, var(--p-gold-light), transparent);
+        }
+
+        .header-text h1 {
+            font-size: 16px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #fff 0%, var(--p-gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        .header-text p {
+            font-size: 7px;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: var(--p-gold-light);
+        }
+
+        .header-gold-line {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--p-gold), var(--p-gold-light), var(--p-gold), transparent);
+            margin-top: 14px;
+            border-radius: 2px;
+        }
+
+        /* === CARDS === */
+        .card-pro {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 106, 78, 0.05);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            margin-bottom: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-pro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--p-green), var(--p-gold), var(--p-green));
+        }
+
+        .card-section-title {
+            font-size: 10px;
+            font-weight: 900;
+            color: var(--p-green);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* === INPUTS === */
+        .input-indo {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e293b;
+            outline: none;
+            background: #fafbfc;
+            transition: all 0.25s ease;
+        }
+
+        .input-indo:focus {
+            border-color: var(--p-gold);
+            background: #ffffff;
+            box-shadow: 0 0 0 4px var(--p-gold-glow);
+        }
+
+        .item-card-premium {
+            background: #ffffff;
+            border: 1px solid rgba(0, 106, 78, 0.04);
+            border-radius: 14px;
+            padding: 10px 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .item-card-premium:focus-within {
+            border-color: var(--p-gold);
+            box-shadow: 0 6px 16px rgba(0, 106, 78, 0.05);
+        }
+
+        .item-badge {
+            background: linear-gradient(135deg, var(--p-green) 0%, var(--p-green-dark) 100%);
+            color: white;
+            font-size: 7px;
+            font-weight: 900;
+            padding: 2px 7px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+
+        .btn-save-sm {
+            background: linear-gradient(135deg, var(--p-green) 0%, var(--p-green-dark) 100%);
+            color: white;
+            width: 44px;
+            border-radius: 0 10px 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-save-sm:active {
+            transform: scale(0.92);
+        }
+
+        label {
+            font-size: 9px;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+            display: block;
+        }
+
+        /* === ICON RESET BUTTON === */
+        .btn-reset-red {
+            font-size: 12px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            color: #dc2626;
+            border: 1px solid #fecaca;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .btn-reset-red:active {
+            transform: scale(0.9);
+            background: #fecaca;
+        }
+
+        /* === MODAL === */
+        #modalResult {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 20, 15, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            width: 100%;
+            max-width: 380px;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+            animation: modalSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-header-premium {
+            background: linear-gradient(135deg, var(--p-green) 0%, #004d39 100%);
+            padding: 24px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal-header-premium::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .product-badge-premium {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 5px 14px;
+            border-radius: 99px;
+            color: var(--p-gold-light);
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-top: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* === LOADER === */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(160deg, #f0f4f0 0%, #e8ece8 50%, #f5f0e8 100%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader-spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid #e2e8f0;
+            border-top: 4px solid var(--p-green);
+            border-right: 4px solid var(--p-gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loader-text {
+            font-size: 10px;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: pulse 1.5s ease-in-out infinite;
+            margin-top: 16px;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .btn-submit-main {
+            width: 100%;
+            background: linear-gradient(135deg, var(--p-green) 0%, var(--p-green-dark) 60%, #003328 100%);
+            color: white;
+            padding: 16px;
+            border-radius: 14px;
+            font-weight: 900;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 6px 20px rgba(0, 106, 78, 0.3);
+            transition: all 0.25s ease;
+        }
+
+        .btn-submit-main:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+
+<body class="pb-32">
+
+    <div id="loader">
+        <div class="loader-spinner"></div>
+        <p class="loader-text">Sinkronisasi Data...</p>
+    </div>
+
+    <div class="header-premium p-4 text-white rounded-b-[24px] shadow-xl">
+        <div class="logo-container">
+            <img src="https://monev.pegadaian.co.id/userdata/profile_site/5662a273c270a215cdc46900d8a882f280e84b32c3f02.png"
+                alt="Logo Pegadaian" class="logo-pegadaian">
+            <div class="header-divider"></div>
+            <div class="header-text">
+                <h1>PEGADAIAN PRO</h1>
+                <p>UPC SIDODADI — SIMULASI DIGITAL</p>
+            </div>
+        </div>
+        <div class="header-gold-line mt-3"></div>
+    </div>
+
+    <div class="px-4 mt-3 space-y-1.5">
+
+        <div class="card-pro p-3">
+            <div class="card-section-title mb-1.5">
+                <i class="fa-solid fa-cube"></i>
+                <span>Produk Simulasi</span>
+            </div>
+            <select id="pilihanProduk"
+                class="w-full p-2.5 border-2 border-emerald-100 rounded-xl font-black text-green-800 text-sm outline-none bg-emerald-50/50 focus:border-amber-300 focus:bg-white transition-all">
+                <option value="KCA">GADAI KCA</option>
+                <option value="FLEXI">GADAI FLEXI</option>
+                <option value="KRASIDA">GADAI KRASIDA</option>
+            </select>
+        </div>
+
+        <div class="card-pro p-3">
+            <div class="flex justify-between items-center mb-2 pb-1.5 border-b border-slate-100">
+                <div class="card-section-title">
+                    <i class="fa-solid fa-tags"></i>
+                    <span>Harga Master</span>
+                </div>
+                <button onclick="handleReset('resetAdmin', this)" class="btn-reset-red" title="Reset Admin">
+                    <i class="fa-solid fa-rotate-left"></i>
+                </button>
+            </div>
+            <div class="grid grid-cols-2 gap-x-3 gap-y-3">
+                <div>
+                    <label>STL</label>
+                    <input type="text" id="stl" class="input-indo" onblur="saveCell('stl', 'stl')">
+                </div>
+                <div>
+                    <label>HD RETAIL</label>
+                    <input type="text" id="hd_retail" class="input-indo" onblur="saveCell('hd_retail', 'hd_retail')">
+                </div>
+                <div class="col-span-2">
+                    <label>UP PERMINTAAN</label>
+                    <input type="text" id="up" class="input-indo font-bold text-green-700"
+                        onblur="saveCell('up', 'up_permintaan')">
+                </div>
+            </div>
+        </div>
+
+        <div class="card-pro p-3">
+            <div class="flex justify-between items-center mb-2 pb-1.5 border-b border-slate-100">
+                <div class="card-section-title">
+                    <i class="fa-solid fa-gem"></i>
+                    <span>Jaminan</span>
+                </div>
+                <button onclick="handleReset('resetJaminan', this)" class="btn-reset-red" title="Reset Jaminan">
+                    <i class="fa-solid fa-rotate-left"></i>
+                </button>
+            </div>
+            <div class="space-y-3">
+                <!-- ITEM 01 -->
+                <div class="item-card-premium">
+                    <div class="item-badge"><i class="fa-solid fa-ring"></i> ITEM 01</div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label>BERAT (GR)</label>
+                            <input type="text" id="b1" class="input-indo" placeholder="0,00"
+                                onblur="saveCell('b1', 'berat1')">
+                        </div>
+                        <div>
+                            <label>KARATASE</label>
+                            <input type="text" id="k1" class="input-indo" placeholder="Krt"
+                                onblur="saveCell('k1', 'karat1')">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 02 -->
+                <div class="item-card-premium">
+                    <div class="item-badge"><i class="fa-solid fa-ring"></i> ITEM 02</div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label>BERAT (GR)</label>
+                            <input type="text" id="b2" class="input-indo" placeholder="0,00"
+                                onblur="saveCell('b2', 'berat2')">
+                        </div>
+                        <div>
+                            <label>KARATASE</label>
+                            <input type="text" id="k2" class="input-indo" placeholder="Krt"
+                                onblur="saveCell('k2', 'karat2')">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 03 -->
+                <div class="item-card-premium">
+                    <div class="item-badge"><i class="fa-solid fa-ring"></i> ITEM 03</div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label>BERAT (GR)</label>
+                            <input type="text" id="b3" class="input-indo" placeholder="0,00"
+                                onblur="saveCell('b3', 'berat3')">
+                        </div>
+                        <div>
+                            <label>KARATASE</label>
+                            <input type="text" id="k3" class="input-indo" placeholder="Krt"
+                                onblur="saveCell('k3', 'karat3')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="prosesSimulasi()" id="btnSubmit" class="btn-submit-main">
+            <i class="fa-solid fa-calculator mr-2"></i>HITUNG SEKARANG
+        </button>
+    </div>
+
+    <div id="modalResult">
+        <div class="modal-content">
+            <div class="modal-header-premium">
+                <h3 class="text-white/70 font-bold text-[10px] uppercase tracking-[2px]">Estimasi Pinjaman</h3>
+                <div id="labelHasil" class="product-badge-premium mt-2"></div>
+            </div>
+            <div class="p-5">
+                <div class="grid grid-cols-2 gap-3 mb-4">
+                    <div class="py-2 px-3 bg-slate-50 rounded-xl text-center border border-slate-100">
+                        <p class="text-[9px] text-slate-400 font-bold uppercase">Harga Retail</p>
+                        <p id="valRetail" class="text-xs font-black text-slate-700 mt-1">Rp 0</p>
+                    </div>
+                    <div id="wrapperUM"
+                        class="py-2 px-3 bg-amber-50 rounded-xl text-center border border-amber-100 hidden">
+                        <p id="labelUM" class="text-[9px] text-amber-600 font-bold uppercase">Uang Muka</p>
+                        <p id="valUM" class="text-xs font-black text-amber-700 mt-1">Rp 0</p>
+                    </div>
+                </div>
+                <div class="text-center mb-4 py-3 bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl">
+                    <p class="text-[9px] text-slate-400 font-bold uppercase">Uang Pinjaman</p>
+                    <h2 id="valPinjaman" class="text-3xl font-black text-green-800 mt-1">Rp 0</h2>
+                </div>
+                <div id="tableKrasida" class="hidden border border-slate-200 rounded-xl overflow-hidden">
+                    <table class="w-full text-[10px]">
+                        <thead class="bg-slate-100 text-green-800">
+                            <tr>
+                                <th class="p-2 border-b">Tenor</th>
+                                <th class="p-2 border-b">Angsuran</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyKrasida" class="text-center font-bold"></tbody>
+                    </table>
+                </div>
+                <button onclick="closePopup()"
+                    class="w-full mt-5 py-3.5 bg-slate-800 text-white rounded-xl font-bold uppercase text-[10px]">
+                    TUTUP
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyTRbvRFQWATCJlG7SmaIyI6-p35KP_lf8Ty8EW6fsekb5qvhvkSfuokf1VTK4Ihn7r/exec";
+
+        window.onload = async () => {
+            const loader = document.getElementById('loader');
+            try {
+                const response = await fetch(WEB_APP_URL);
+                const data = await response.json();
+                if (data.stl) document.getElementById('stl').value = formatVal(data.stl);
+                if (data.hd_retail) document.getElementById('hd_retail').value = formatVal(data.hd_retail);
+                if (data.up) document.getElementById('up').value = formatVal(data.up);
+                if (data.b1) document.getElementById('b1').value = formatVal(data.b1);
+                if (data.k1) document.getElementById('k1').value = formatVal(data.k1);
+                if (data.b2) document.getElementById('b2').value = formatVal(data.b2);
+                if (data.k2) document.getElementById('k2').value = formatVal(data.k2);
+                if (data.b3) document.getElementById('b3').value = formatVal(data.b3);
+                if (data.k3) document.getElementById('k3').value = formatVal(data.k3);
+            } catch (e) { console.log("Load gagal."); }
+            finally { loader.style.display = 'none'; }
+        };
+
+        function formatVal(v) {
+            let s = v.toString().replace('.', ',');
+            let p = s.split(',');
+            p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            return p.join(',');
+        }
+
+        function formatID(i) {
+            let v = i.value.replace(/[^0-9,]/g, '');
+            let p = v.split(',');
+            p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            i.value = p.join(',');
+        }
+
+        function parseID(s) { return parseFloat(s.replace(/\./g, '').replace(',', '.')) || 0; }
+
+        ['stl', 'hd_retail', 'up', 'b1', 'k1', 'b2', 'k2', 'b3', 'k3'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('input', function () { formatID(this); });
+        });
+
+        async function saveCell(id, key) {
+            const el = document.getElementById(id);
+            el.style.backgroundColor = "#fef9c3";
+            const payload = {}; payload[key] = parseID(el.value);
+            try {
+                await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify(payload) });
+                el.style.backgroundColor = "#dcfce7";
+                setTimeout(() => el.style.backgroundColor = "white", 800);
+            } catch (e) { alert("Simpan Gagal!"); el.style.backgroundColor = "white"; }
+        }
+
+        async function handleReset(action, btn) {
+            const originalHTML = btn.innerHTML; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>'; btn.disabled = true;
+            try {
+                await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify({ action: action }) });
+                if (action === 'resetAdmin') ['stl', 'hd_retail', 'up'].forEach(i => document.getElementById(i).value = "");
+                else['b1', 'k1', 'b2', 'k2', 'b3', 'k3'].forEach(i => document.getElementById(i).value = "");
+            } catch (e) { alert("Reset Gagal!"); }
+            finally { btn.innerHTML = originalHTML; btn.disabled = false; }
+        }
+
+        async function prosesSimulasi() {
+            const btn = document.getElementById('btnSubmit');
+            const prod = document.getElementById('pilihanProduk').value;
+            btn.innerHTML = "MENGHITUNG..."; btn.disabled = true;
+            const payload = {
+                stl: parseID(document.getElementById('stl').value),
+                hd_retail: parseID(document.getElementById('hd_retail').value),
+                up_permintaan: parseID(document.getElementById('up').value),
+                berat1: parseID(document.getElementById('b1').value), karat1: parseID(document.getElementById('k1').value),
+                berat2: parseID(document.getElementById('b2').value), karat2: parseID(document.getElementById('k2').value),
+                berat3: parseID(document.getElementById('b3').value), karat3: parseID(document.getElementById('k3').value)
+            };
+            try {
+                const res = await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify(payload) });
+                const data = await res.json();
+                document.getElementById('labelHasil').innerText = "PRODUK " + prod;
+
+                // === NEW DISPLAY LOGIC ===
+                const getVal = (k1, k2) => {
+                    let v = (data[k1] !== undefined && data[k1] !== null) ? data[k1] :
+                        ((data[k2] !== undefined && data[k2] !== null) ? data[k2] : null);
+                    if (v === null || v === "") return null;
+                    let vStr = v.toString().split(',')[0];
+                    if (vStr.includes('Rp')) return vStr;
+                    // Format as currency if it's a raw number or string without thousand separators
+                    return "Rp " + (vStr.includes('.') ? vStr : formatVal(vStr));
+                };
+
+                const retailVal = getVal('f2', 'F2') || "Rp " + document.getElementById('hd_retail').value.split(',')[0];
+                document.getElementById('valRetail').innerText = retailVal;
+
+                const umWrapper = document.getElementById('wrapperUM');
+                const umVal = document.getElementById('valUM');
+                umWrapper.classList.add('hidden');
+
+                let currentUM = null;
+                if (prod === 'KCA') currentUM = getVal('f4', 'F4');
+                else if (prod === 'KRASIDA') currentUM = getVal('i4', 'I4');
+                else if (prod === 'FLEXI') currentUM = getVal('k4', 'K4');
+
+                if (currentUM !== null) {
+                    umVal.innerText = currentUM;
+                    umWrapper.classList.remove('hidden');
+                }
+                // ==========================
+
+                const tbBody = document.getElementById('tbodyKrasida');
+                const tbSec = document.getElementById('tableKrasida');
+                tbSec.classList.add('hidden');
+                if (prod === 'KCA') document.getElementById('valPinjaman').innerText = data.kca;
+                if (prod === 'FLEXI') document.getElementById('valPinjaman').innerText = data.flexi;
+                if (prod === 'KRASIDA') {
+                    document.getElementById('valPinjaman').innerText = data.krasida;
+                    tbBody.innerHTML = "";
+                    data.tabelKrasida.slice(1).forEach(row => {
+                        tbBody.innerHTML += `<tr><td class="p-2 border">${row[0]}</td><td class="p-2 border text-red-600 font-bold">${row[1]}</td></tr>`;
+                    });
+                    tbSec.classList.remove('hidden');
+                }
+                document.getElementById('modalResult').style.display = 'flex';
+            } catch (e) { alert("Gagal!"); }
+            finally { btn.innerHTML = "HITUNG SEKARANG"; btn.disabled = false; }
+        }
+        function closePopup() { document.getElementById('modalResult').style.display = 'none'; }
+    </script>
+</body>
+
+</html>
